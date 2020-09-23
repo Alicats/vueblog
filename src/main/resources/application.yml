@@ -6,8 +6,20 @@ spring:
     username: root
     password: 123456
 
+#mybatis-plus:
+#  mapper-locations: classpath*:/mapper/**Mapper.xml
+#  mapper-locations: classpath:/mapper/**Mapper.xml
+
 mybatis-plus:
-  mapper-locations: classpath*:/mapper/**Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true   #关闭 驼峰命名 下划线 映射
+  #  这种是在  src 下创建mapping文件夹
+  #  mapper-locations: classpath:cn/xej/mapper/mapping/*.xml
+  #  这个是在resources下创建mapping文件夹
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.xej.entity
+
 
 server:
   port: 7777

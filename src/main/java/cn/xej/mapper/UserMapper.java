@@ -3,6 +3,8 @@ package cn.xej.mapper;
 import cn.xej.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -12,5 +14,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2020-09-16
  */
 public interface UserMapper extends BaseMapper<User> {
-
+    List<User> getAllUsers();
 }
